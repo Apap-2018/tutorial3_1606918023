@@ -82,9 +82,9 @@ public class PilotController {
 				model.addAttribute("errorMessage", message);
 				return "error-page";
 			} else {
-				message = "Fly hour berhasil di update!";
+				message = "Yeay! Update fly hour berhasil dilakukan!";
 				archive.setFlyHour(newFlyHour.get());
-				model.addAttribute("message", archive);
+				model.addAttribute("message", message);
 				return "result";
 			}
 		} else {
@@ -105,7 +105,7 @@ public class PilotController {
 			for (int i=0; i<archive.size(); i++) {
 				if (archive.get(i).getId().equals(id.get())) {
 					message = "Yeay! Pilot dengan id: " + archive.get(i).getId() + " berhasil dihapus!";
-					model.addAttribute("messageDelete", message);
+					model.addAttribute("message", message);
 					archive.remove(i);
 					return "result";
 				}
